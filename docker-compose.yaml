@@ -1,0 +1,32 @@
+version: '3'
+
+volumes:
+  data:
+
+services:
+  db:
+    image: mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: mydatabase
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    volumes:
+      - data:/var/lib/mysql
+
+  app:
+    #iimage: mrnim94/thiep-cuoi:latest
+    build: .
+    environment:
+      DB_CONNECTION: mysql
+      DB_HOST: db
+      DB_PORT: 3306
+      DB_DATABASE: mydatabase
+      DB_USERNAME: user
+      DB_PASSWORD: password
+      APP_DEBUG: "true"
+      SESSION_DRIVER: file
+    ports:
+      - "8086:80"
+    depends_on:
+      - db

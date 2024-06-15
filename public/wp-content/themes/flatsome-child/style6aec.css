@@ -1,0 +1,34 @@
+/*
+Theme Name: Flatsome Child
+Description: This is a child theme for Flatsome Theme
+Author: UX Themes
+Template: flatsome
+Version: 3.0
+*/
+
+/*************** ADD CUSTOM CSS HERE.   ***************/
+html{background-color:#fff}
+
+.woocommerce-billing-fields #billing_country_field{
+	display: none;
+}
+
+@media (min-width: 550px) {
+	.woocommerce-billing-fields p.form-row-first {
+		width: auto;
+		float: none;
+		margin-right: 0;
+	}
+}
+
+
+
+@media only screen and (max-width: 48em) {
+/*************** ADD MOBILE ONLY CSS HERE  ***************/
+
+	.home .row .section {
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+
+}
